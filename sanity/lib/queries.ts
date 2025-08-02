@@ -25,3 +25,9 @@ export const STARTUP_BY_ID_QUERY = defineQuery(
   image, 
   pitch}`
 );
+export const VIEWS_BY_ID_QUERY = defineQuery(
+  `*[_type=="startup" && _id==$id][0]{
+  _id,
+  views,}
+  `
+);
