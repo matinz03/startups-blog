@@ -34,6 +34,9 @@
   .text-24-black {
     @apply text-[24px] font-black text-black;
   }
+.text-24-medium {
+    @apply text-[24px] font-medium text-black;
+  }
 
   .text-20-medium {
     @apply font-medium text-[20px] text-black;
