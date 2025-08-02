@@ -4,12 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { Button } from "./ui/button";
+import { Author, Startup } from "@/sanity/types";
 
-interface StartupCardProps {
-  post: StartupTypecard;
-}
+export type StartupTypeCard = Omit<Startup, "author"> & { author?: Author };
 
-const StartupCard: React.FC<StartupCardProps> = ({ post }) => {
+const StartupCard = ({ post }: { post: StartupTypeCard }) => {
   const {
     _createdAt,
     image,
@@ -37,11 +36,9 @@ const StartupCard: React.FC<StartupCardProps> = ({ post }) => {
               <h3 className="text-26-semibold line-clamp-1">{title}</h3>
             </Link>
             <Link href={`/user/${author?._id}`}>
-              <Image
-                src="https://placehold.co/48x48"
-                width={48}
-                height={48}
-                className="rounded-full"
+              <img 
+                src={author?.image || "https:/placehold.co/48x48"}
+                className="rounded-full w-[48px] h-[48px]"
                 alt="avater"
               />
             </Link>
@@ -53,7 +50,7 @@ const StartupCard: React.FC<StartupCardProps> = ({ post }) => {
         <img src={image} className="startup-card_img" alt="nothing" />
       </Link>
       <div className="flex-between gap-3 mt-5">
-        <Link href={`/?query=${category.toLowerCase()}`}>
+        <Link href={`/?query=${category?.toLowerCase()}`}>
           <p className="text-16-medium">{category}</p>
         </Link>
         <Button className="startup-card_btn" asChild>
