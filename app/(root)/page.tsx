@@ -11,8 +11,9 @@ const Home = async ({
 }) => {
   const query = (await searchParams).query;
   const params = { search: query || null };
+
   const posts = await client.fetch(STARTUPS_QUERY, params);
-  console.log(JSON.stringify(posts, null, 2));
+
   // const posts =
   // [
   //   {
