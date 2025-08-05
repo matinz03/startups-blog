@@ -98,7 +98,6 @@ const StartupForm = () => {
         <Textarea
           id="description"
           name="description"
-          value="kirkirkirkirkirkirkirkirkirkirkirkirkirkirkirkirkirkirkirkirkirkirkirkirkirkirkirkirkirkirkirkirkirkirkirkirkirkirkir"
           className="startup-form_textarea"
           required
           placeholder="Startup Description"
