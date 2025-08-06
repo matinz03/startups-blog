@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# YC Directory
+
+Pitch your startup, connect with entrepreneurs, and get noticed.
+
+## Overview
+
+YC Directory is a Next.js application for submitting, browsing, and voting on startup ideas. Users can log in with GitHub, create pitches, and explore other startups. The project uses Sanity for content management and Sentry for error monitoring.
+
+## Features
+
+- Submit and edit startup pitches
+- Browse and search startups by category or author
+- GitHub authentication
+- Editor picks and user profiles
+- Views tracking for each startup
+- Toast notifications for feedback
+- Responsive UI with Tailwind CSS
+
+## Tech Stack
+
+- [Next.js](https://nextjs.org/)
+- [Sanity](https://www.sanity.io/)
+- [Next Auth](https://authjs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Sentry](https://sentry.io/)
+- [Radix UI](https://www.radix-ui.com/)
+- [React](https://react.dev/)
 
 ## Getting Started
 
-First, run the development server:
+1. **Install dependencies:**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+   ```sh
+   npm install
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Set up environment variables:**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+   Copy `.env.local.example` to `.env.local` and fill in your credentials:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   ```
+   AUTH_SECRET=...
+   AUTH_GITHUB_ID=...
+   AUTH_GITHUB_SECRET=...
+   NEXT_PUBLIC_SANITY_PROJECT_ID=...
+   NEXT_PUBLIC_SANITY_DATASET=...
+   SANITY_WRITE_TOKEN=...
+   SENTRY_AUTH_TOKEN=...
+   ```
 
-## Learn More
+3. **Run the development server:**
 
-To learn more about Next.js, take a look at the following resources:
+   ```sh
+   npm run dev
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Scripts
 
-## Deploy on Vercel
+- `npm run dev` – Start development server
+- `npm run build` – Build for production
+- `npm run start` – Start production server
+- `npm run lint` – Run ESLint
+- `npm run typegen` – Generate Sanity types
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Folder Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `app/` – Next.js app routes
+- `components/` – UI and feature components
+- `lib/` – Utility functions and server actions
+- `hooks/` – Custom React hooks
+- `sanity/` – Sanity schemas and config
+- `public/` – Static assets
+
+## Deployment
+
+(https://startups-blog.vercel.app/)
