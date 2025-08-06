@@ -23,7 +23,7 @@ YC Directory is a Next.js application for submitting, browsing, and voting on st
 - [Next Auth](https://authjs.dev/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Sentry](https://sentry.io/)
-- [Radix UI](https://www.radix-ui.com/)
+- [Shadcn UI](https://www.radix-ui.com/)
 - [React](https://react.dev/)
 
 ## Getting Started
@@ -75,4 +75,4 @@ YC Directory is a Next.js application for submitting, browsing, and voting on st
 
 ## Deployment
 
-(https://startups-blog.vercel.app/)
+[Vercel](https://startups-blog.vercel.app/)
