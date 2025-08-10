@@ -7,7 +7,6 @@ import { Author, Startup } from "@/sanity/types";
 import { Skeleton } from "@/components/ui/skeleton";
 import { deletePitch } from "@/lib/actions";
 import { auth } from "@/auth";
-import DeleteButton from "./DeleteButton";
 
 export type StartupTypeCard = Omit<Startup, "author"> & { author?: Author };
 
