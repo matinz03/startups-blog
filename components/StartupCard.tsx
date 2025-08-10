@@ -5,10 +5,13 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Author, Startup } from "@/sanity/types";
 import { Skeleton } from "@/components/ui/skeleton";
+import { deletePitch } from "@/lib/actions";
+import { auth } from "@/auth";
+import DeleteButton from "./DeleteButton";
 
 export type StartupTypeCard = Omit<Startup, "author"> & { author?: Author };
 
-const StartupCard = ({ post }: { post: StartupTypeCard }) => {
+const StartupCard = async ({ post }: { post: StartupTypeCard }) => {
   const {
     _createdAt,
     views,
@@ -19,6 +22,9 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
     image,
     description,
   } = post;
+  const session = await auth();
+  const isAuthor = "" + session.id === author?._id;
+
 
   return (
     <li className="startup-card group">
@@ -60,9 +66,13 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
         <Link href={`/?query=${category?.toLowerCase()}`}>
           <p className="text-16-medium">{category}</p>
         </Link>
-        <Button className="startup-card_btn" asChild>
-          <Link href={`/startup/${_id}`}>Details</Link>
-        </Button>
+        <div className="flex gap-2">
+          {isAuthor ? <DeleteButton id={_id} /> : ""}
+
+          <Button className="startup-card_btn " asChild>
+            <Link href={`/startup/${_id}`}>Details</Link>
+          </Button>
+        </div>
       </div>
     </li>
   );

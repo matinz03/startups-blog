@@ -154,6 +154,9 @@
   .startup-card_btn {
     @apply rounded-full bg-black-200 font-medium text-[16px] text-white px-5 py-3 !important;
   }
+  .startup-card_delbtn {
+    @apply rounded-full bg-primary font-medium text-[16px] text-white px-5 py-3 !important;
+  }
 
   .startup-card_skeleton {
     @apply w-full h-96 rounded-[22px] bg-zinc-400;

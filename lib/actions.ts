@@ -4,6 +4,31 @@ import { auth } from "@/auth";
 import { parseServerActionResponse } from "@/lib/utils";
 import slugify from "slugify";
 import { writeClient } from "@/sanity/lib/write-client";
+import { revalidatePath } from "next/cache";
+
+export const deletePitch = async (id: string) => {
+  const session = await auth();
+
+  if (!session)
+    return parseServerActionResponse({
+      error: "Not signed in",
+      status: "ERROR",
+    });
+  try {
+    await writeClient
+      .delete({
+        query: '*[_type == "startup" && _id == $id][0]',
+        params: { id },
+      })
+      .catch((err) => {
+        console.error("Delete failed: ", err.message);
+      });
+
+    revalidatePath(`/startup/${id}`);
+  } catch (error) {
+    console.log("error deleting the pitch", error);
+  }
+};
 
 export const createPitch = async (
   state: Record<string, string>,
