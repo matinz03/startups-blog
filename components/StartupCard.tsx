@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Author, Startup } from "@/sanity/types";
 import { Skeleton } from "@/components/ui/skeleton";
-import { deletePitch } from "@/lib/actions";
+import DeleteButton from "./DeleteButton";
 import { auth } from "@/auth";
 
 export type StartupTypeCard = Omit<Startup, "author"> & { author?: Author };
