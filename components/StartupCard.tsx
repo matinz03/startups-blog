@@ -22,7 +22,7 @@ const StartupCard = async ({ post }: { post: StartupTypeCard }) => {
     description,
   } = post;
   const session = await auth();
-  const isAuthor = "" + session.id === author?._id;
+  const isAuthor = "" + session?.id === author?._id;
 
 
   return (
