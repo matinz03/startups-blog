@@ -1,10 +1,11 @@
-﻿FROM node:22-alpine AS base
+FROM node:22-alpine AS base
 
 FROM base AS deps
 RUN apk add --no-cache python3 make g++ libc6-compat
 WORKDIR /app
-COPY package.json package-lock.json ./
+COPY package.json ./
 RUN npm install --legacy-peer-deps
+
 
 FROM base AS builder
 WORKDIR /app
