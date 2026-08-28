@@ -7,7 +7,9 @@ const nextConfig: NextConfig = {
   },
   images: {
     dangerouslyAllowSVG: true,
-    remotePatterns: [{ protocol: "https", hostname: "*" }],
+    remotePatterns: [
+      { protocol: "https", hostname: "avatars.githubusercontent.com" },
+    ],
   },
   devIndicators: {
     appIsrStatus: true,
