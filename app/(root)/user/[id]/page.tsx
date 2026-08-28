@@ -30,6 +30,7 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
             alt={user.name}
             width={220}
             height={220}
+            unoptimized
             className="profile_image"
           />
 

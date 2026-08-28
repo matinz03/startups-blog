@@ -53,6 +53,7 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
                 alt="avatar"
                 width={64}
                 height={64}
+                unoptimized
                 className="rounded-full drop-shadow-lg"
               />
 

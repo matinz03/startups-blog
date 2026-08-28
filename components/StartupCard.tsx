@@ -50,6 +50,7 @@ const StartupCard = async ({ post }: { post: StartupTypeCard }) => {
             alt={author.name}
             width={48}
             height={48}
+            unoptimized
             className="rounded-full"
           />
         </Link>
