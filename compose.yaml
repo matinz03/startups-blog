@@ -1,6 +1,10 @@
 ﻿services:
   web:
-    build: .
+    build:
+      context: .
+      args:
+        NEXT_PUBLIC_SANITY_PROJECT_ID: ${NEXT_PUBLIC_SANITY_PROJECT_ID}
+        NEXT_PUBLIC_SANITY_DATASET: ${NEXT_PUBLIC_SANITY_DATASET}
     restart: unless-stopped
     env_file:
       - path: .env.local
