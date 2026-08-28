@@ -7,8 +7,13 @@ const nextConfig: NextConfig = {
   },
   images: {
     dangerouslyAllowSVG: true,
+    domains: ["avatars.githubusercontent.com"],
     remotePatterns: [
-      { protocol: "https", hostname: "avatars.githubusercontent.com" },
+      {
+        protocol: "https",
+        hostname: "avatars.githubusercontent.com",
+        pathname: "/u/**",
+      },
     ],
   },
   devIndicators: {
